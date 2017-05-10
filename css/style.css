@@ -1,0 +1,60 @@
+html,body,div,section{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+body{
+  overflow: hidden;
+  background: #000;
+}
+
+
+.excel-logo,
+.mec-logo,
+.mec-text{
+  position: fixed;
+  top:20px;
+}
+
+.excel-logo{
+  height: 70px;
+  right: 50px;
+}
+
+.mec-logo{
+  left: 50px;
+  height: 70px;
+}
+
+.mec-text{
+  left: 136px;
+  top: 30px;
+  color: #fff;
+  text-align: left;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.mec-text p{
+  margin: 3px;
+}
+
+@media (max-width:768px) and (min-width: 413px) {
+  .mec-logo,
+  .excel-logo{
+    height: 130px;
+    top: 40px;
+  }
+  .mec-text{
+    margin: 4px;
+    left: 175px;
+    top:50px;
+  }
+
+  .mec-text p{
+    font-size: 24px;
+  }
+
+}
