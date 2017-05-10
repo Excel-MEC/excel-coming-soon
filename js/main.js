@@ -33,7 +33,9 @@ setTimeout(() => { // prevent the user from scrolling too soon
 
 setInterval(() => {
   console.log("set interval!");
-  while(lock){}
+  // while(lock){
+  //   console.log("while loop");
+  // }
   if (lock === false){
     lock = true;
     textOnDisplay = (textOnDisplay + 1) % text.length;
