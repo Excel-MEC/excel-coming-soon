@@ -5,7 +5,7 @@ var canvas = document.querySelector("#scene"),
 	particles = [],
 	amount = 0,
 	mouse = {x:0,y:0},
-	radius = 1;
+	radius = 0.7;
 
 var lasttext = ""; // for resize()
 // var copy = document.querySelector("#copy");
@@ -23,21 +23,19 @@ function Particle(x,y){
 		x : x,
 		y: y
 	};
-	this.r =  Math.random()*5*(ww/1500) + 2;
+	this.r =  Math.random()*5*(ww/2500) + 2;
 	this.vx = (Math.random()-0.5)*20;
 	this.vy = (Math.random()-0.5)*20;
 	this.accX = 0;
 	this.accY = 0;
-	this.friction = Math.random()*0.05 + 0.90;
+	this.friction = Math.random()*0.05 + 0.9;
 
 	this.color = colors[Math.floor(Math.random()*(colors.length + 1))];
 }
 
 Particle.prototype.render = function() {
-
-
-	this.accX = (this.dest.x - this.x)/1000;
-	this.accY = (this.dest.y - this.y)/1000;
+	this.accX = (this.dest.x - this.x)/300;
+	this.accY = (this.dest.y - this.y)/300;
 	this.vx += this.accX;
 	this.vy += this.accY;
 	this.vx *= this.friction;
@@ -90,7 +88,7 @@ function initScene(text){
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	ctx.font = "bold "+Math.floor((ww/10)*(text.length >14?14/text.length:1))+"px " + font;
+	ctx.font = "bold "+(ww/10)+"px " + font;
 	ctx.textAlign = "center";
 	ctx.fillText(text, ww/2, wh/2);
 
@@ -111,7 +109,7 @@ function initScene(text){
 }
 
 function onMouseClick(){
-	radius++;
+	//radius++;
 	if(radius ===5){
 		radius = 0;
 	}
