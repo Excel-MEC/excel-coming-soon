@@ -8,7 +8,8 @@ html,body,div,section{
 
 body{
   overflow: hidden;
-  background: #080040;
+  /*background: #03a9f4;*/
+  background: #fff;
 }
 
 
@@ -20,8 +21,9 @@ body{
 }
 
 .excel-logo{
-  height: 70px;
+  height: 110px;
   right: 50px;
+  top:10px;
 }
 
 .mec-logo{
@@ -52,11 +54,15 @@ ul.legacy{
 
 ul.legacy li{
   display: inline-block;
+  border: 3px solid rgba(181, 181, 181, 0.85);
+  border-radius: 50%;
+  margin: 20px;
 }
 
 ul.legacy li img{
   height: 50px;
-  padding: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 
