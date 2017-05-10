@@ -8,8 +8,8 @@ html,body,div,section{
 
 body{
   overflow: hidden;
-
-  background: #fff;
+  font-family: 'Bree Serif', serif;
+  background: #faebd7;
 }
 
 
@@ -45,11 +45,57 @@ body{
 
 ul.legacy{
   padding: 0;
-  margin: 0;
+  margin: auto;
+}
+
+.footer{
   position: fixed;
-  bottom: 10px;
+  bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+  height: unset;
+  width: 100%;
+}
+
+.footer ul.legacy>a{
+  padding: 20px;
+  display: inline-block;
+  width: 13px;
+  height:13px;
+  border: 3px solid rgba(236, 160, 59,0.5);
+  border-radius: 50%;
+  background-color: white;
+  margin: 20px;
+  transition: border 0.3s;
+  cursor: pointer;
+}
+.footer ul.legacy>a:hover{
+  border-color: rgba(236, 160, 59,1);
+}
+.parts{
+  margin: auto;
+  text-align: center;
+}
+
+.copyrt{
+  font-size: 14px;
+  position: fixed;
+  bottom: 5px;
   left: 50%;
-  margin-left: -150px;
+  color: rgba(206,164,108,0.9);
+  transform: translateX(-50%);
+}
+
+.label{
+  color: rgba(206,164,108,0.7);
+  margin-bottom: 0;
+}
+
+.footer ul.legacy i{
+  line-height: 13px;
+  transform: translateX(-50%);
+  position: relative;
+  left: 50%;
 }
 
 ul.legacy li{
@@ -58,16 +104,34 @@ ul.legacy li{
 }
 
 ul.legacy li img{
-  border: 3px solid rgba(181, 181, 181, 0.85);
+  border: 3px solid rgba(236, 160, 59,0.5);
   border-radius: 50%;
+  cursor: pointer;
   padding: 0;
+  transition: border-color 0.3s;
 }
 
+ul.legacy li img:hover{
+  border-color: rgba(236, 160, 59,1);
+}
 
 ul.legacy li img{
   height: 50px;
   padding: 0;
   margin: 0;
+}
+
+a.facebook i{
+	color: #3b5998;
+}
+a.twitter i{
+	color: #00aced;
+}
+a.gplus i{
+	color: #d34836;
+}
+a.insta i{
+	color: #fb3958;
 }
 
 
