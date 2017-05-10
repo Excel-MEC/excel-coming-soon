@@ -6,8 +6,8 @@ var text = [
 ];
 
 
-var scrollDelay = 8000; // delay for accepting the next scroll event
-var autoScrollDelay = 5000;
+var scrollDelay = 2000; // delay for accepting the next scroll event
+var autoScrollDelay = 3000;
 // uncomment to override the defaults
 
  var colors = ["#913cca","#bb3d7b", "#d63f4a","#da3f43", "#cc3e5c"];
