@@ -62,3 +62,14 @@ Rx.Observable.fromEvent(window,'mousewheel')
       lock = false;
     },scrollDelay);
   });
+
+
+// scroll reveal
+
+window.sr = ScrollReveal();
+
+sr.reveal('#e2016',{ duration: 2000,origin: "bottom",distance: "100px"});
+sr.reveal('#e2015',{ duration: 2000,delay: 200,origin: "bottom",distance: "100px"});
+sr.reveal('#e2014',{ duration: 2000,delay: 200,origin: "bottom",distance: "100px"});
+sr.reveal('.mec-logo',{ duration: 2000, origin:"left"});
+sr.reveal('.excel-logo',{ duration: 2000, origin: "right"});
