@@ -174,8 +174,6 @@ a.insta i:hover{
 }
 
 
-
-
 ul.legacy li .tooltip{
   position: absolute;
   font-weight: lighter;
@@ -229,12 +227,15 @@ ul.legacy li:hover .tooltip{
   	color: #fb3958;
   }
 
-  ul.legacy li{
+  .footer ul.legacy li{
     margin: 5px;
-
   }
 
-  ul.legacy li img{
+  .footer ul.legacy li a{
+    margin: 5px;
+  }
+
+  .footer ul.legacy li img{
     height: 30px;
   }
 }
