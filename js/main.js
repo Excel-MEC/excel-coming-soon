@@ -81,11 +81,12 @@ window.sr = ScrollReveal();
       },scrollDelay);
     });
 
-  sr.reveal('#e2016',{ duration: 2000,origin: "bottom",distance: "200px"});
-  sr.reveal('#e2015',{ duration: 2000,delay:200,origin: "bottom",distance: "200px"});
-  sr.reveal('#e2014',{ duration: 2000,delay:400,origin: "bottom",distance: "200px"});
+  sr.reveal('#e2017',{ duration: 2000,origin: "bottom",distance: "200px"});
+  sr.reveal('#e2016',{ duration: 2000,delay:200,origin: "bottom",distance: "200px"});
+  sr.reveal('#e2015',{ duration: 2000,delay:400,origin: "bottom",distance: "200px"});
+  sr.reveal('#e2014',{ duration: 2000,delay:800,origin: "bottom",distance: "200px"});
 
-  // sr.reveal('.label',{'duration':2000,'opacity':0})
+  // sr.reveal('.copyrt',{duration:2000,origin: "bottom"});
 
   sr.reveal('.facebook',{ duration: 2000,delay:400,origin: "bottom",distance: "100px"});
   sr.reveal('.gplus',{ duration: 2000,delay:200,origin: "bottom",distance: "100px"});

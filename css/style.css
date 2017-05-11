@@ -10,7 +10,8 @@ body{
   overflow: hidden;
   font-family: 'Bree Serif', serif;
   /*background: #faebd7;*/
-  background: #fdfdfd;
+  /*background: #fdfdfd;*/
+  background: #fff;
 }
 
 #e2016, #e2015, #e2014, .label, .facebook, .gplus, .insta{
@@ -173,19 +174,39 @@ a.insta i:hover{
 }
 
 
+ul.legacy li:last-child{
+  margin-right: 59px;
+}
+
+ul.legacy li .tooltip{
+  position: absolute;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 12px;
+  visibility: hidden;
+  color: rgba(255,255,255,0);
+  transition: all 0.3s;
+  width: 60px;
+  font-family: 'Lato', sans-serif;
+}
+ul.legacy li:hover .tooltip{
+  visibility: visible;
+  color: rgba(0,0,0,1);
+
+}
+
+
 @media (max-width:768px) {
-  .mec-logo,
-  .excel-logo{
+  .mec-logo{
     height: 50px;
     top: 10px;
-  }
-
-  .mec-logo{
     left:8px;
   }
 
   .excel-logo{
     right: 8px;
+    height: 75px;
+    top: 1px;
   }
   .mec-text{
     margin: 4px;
