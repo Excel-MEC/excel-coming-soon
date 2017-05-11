@@ -20,10 +20,7 @@ var autoScrollDelay = 4000;
 
 // particle-text init
 
-console.log("init scene");
-initScene(text[0]);
-console.log("render scene");
-requestAnimationFrame(render);
+
 
 
 // change on scroll
@@ -34,41 +31,32 @@ var textOnDisplay = 0;
 
 setTimeout(() => { // prevent the user from scrolling too soon
   lock = false;
+  console.log("init scene");
+  initScene(text[0]);
+  console.log("render scene");
+  requestAnimationFrame(render);
+  setInterval(() => {
+    console.log("set interval!");
+    // while(lock){
+    //   console.log("while loop");
+    // }
+    if (lock === false){
+      lock = true;
+      textOnDisplay = (textOnDisplay + 1) % text.length;
+      initScene(text[textOnDisplay]);
+      setTimeout(() => { // prevent the user from scrolling too soon
+        lock = false;
+      },scrollDelay);
+    }
+  },scrollDelay + autoScrollDelay);
+
 },scrollDelay);
 
 
 
-setInterval(() => {
-  console.log("set interval!");
-  // while(lock){
-  //   console.log("while loop");
-  // }
-  if (lock === false){
-    lock = true;
-    textOnDisplay = (textOnDisplay + 1) % text.length;
-    initScene(text[textOnDisplay]);
-    setTimeout(() => { // prevent the user from scrolling too soon
-      lock = false;
-    },scrollDelay);
-  }
-},scrollDelay + autoScrollDelay);
 
 
-Rx.Observable.fromEvent(window,'mousewheel')
-  .map( e => e.wheelDelta > 0)
-  .filter( () => lock === false )
-  .subscribe( (delta) => {
-    lock = true;
-    var t = delta?(textOnDisplay > 1 ? textOnDisplay - 1: 0 ): (textOnDisplay < text.length -1? textOnDisplay + 1:textOnDisplay)
-    console.log(delta,textOnDisplay);
-    if (t != textOnDisplay){
-      textOnDisplay = t;
-      initScene(text[textOnDisplay]);
-    }
-    setTimeout(() => {
-      lock = false;
-    },scrollDelay);
-  });
+
 
 
 // scroll reveal
@@ -76,6 +64,23 @@ Rx.Observable.fromEvent(window,'mousewheel')
 window.sr = ScrollReveal();
 
 (() => {
+
+  Rx.Observable.fromEvent(window,'mousewheel')
+    .map( e => e.wheelDelta > 0)
+    .filter( () => lock === false )
+    .subscribe( (delta) => {
+      lock = true;
+      var t = delta?(textOnDisplay > 1 ? textOnDisplay - 1: 0 ): (textOnDisplay < text.length -1? textOnDisplay + 1:textOnDisplay)
+      console.log(delta,textOnDisplay);
+      if (t != textOnDisplay){
+        textOnDisplay = t;
+        initScene(text[textOnDisplay]);
+      }
+      setTimeout(() => {
+        lock = false;
+      },scrollDelay);
+    });
+
   sr.reveal('#e2016',{ duration: 2000,origin: "bottom",distance: "200px"});
   sr.reveal('#e2015',{ duration: 2000,delay:200,origin: "bottom",distance: "200px"});
   sr.reveal('#e2014',{ duration: 2000,delay:400,origin: "bottom",distance: "200px"});
