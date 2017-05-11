@@ -7,7 +7,8 @@ var canvas = document.querySelector("#scene"),
 	mouse = {x:0,y:0},
 	radius = 0.7;
 
-var densityFactor = 150;
+var densityFactor = window.innerWidth > 768? 150: 95;
+var fontSizeFactor = window.innerWidth > 768? null: 1.3;
 
 var lasttext = ""; // for resize()
 // var copy = document.querySelector("#copy");
@@ -90,7 +91,7 @@ function initScene(text){
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	ctx.font = "bold "+Math.floor((ww/10)*(text.length >14?14/text.length:1))+"px " + font;
+	ctx.font = "bold "+Math.floor((ww/10)*(text.length >14 && fontSizeFactor === null ?14/text.length:fontSizeFactor))+"px " + font;
 	ctx.textAlign = "center";
 	ctx.fillText(text, ww/2, wh/2);
 
