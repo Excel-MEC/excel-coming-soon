@@ -8,7 +8,7 @@ var text = [
 // density
 
 
-// 
+//
 
 
 var scrollDelay = 2000; // delay for accepting the next scroll event
@@ -20,7 +20,9 @@ var autoScrollDelay = 3000;
 
 // particle-text init
 
+console.log("init scene");
 initScene(text[0]);
+console.log("render scene");
 requestAnimationFrame(render);
 
 

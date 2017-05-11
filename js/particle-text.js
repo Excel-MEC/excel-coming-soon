@@ -7,14 +7,19 @@ var canvas = document.querySelector("#scene"),
 	mouse = {x:0,y:0},
 	radius = 0.7;
 
-var densityFactor = window.innerWidth > 768? 150: 95;
-var fontSizeFactor = window.innerWidth > 768? null: 1.3;
 
 var lasttext = ""; // for resize()
 // var copy = document.querySelector("#copy");
 
 var ww = canvas.width = window.innerWidth;
 var wh = canvas.height = window.innerHeight;
+
+
+var densityFactor =  ww > 768?150:130;
+// var densityFactor = 130;
+var fontSizeFactor = ww > 768?null:1.3;
+
+var radiusFactor = ww > 768?2500:3000;
 
 ww = ww > wh? ww: wh;
 wh = ww > wh? wh: ww;
@@ -26,7 +31,7 @@ function Particle(x,y){
 		x : x,
 		y: y
 	};
-	this.r =  Math.random()*5*(ww/2500) + 2;
+	this.r =  Math.random()*5*(ww/radiusFactor) + 2;
 	this.vx = (Math.random()-0.5)*20;
 	this.vy = (Math.random()-0.5)*20;
 	this.accX = 0;
@@ -91,7 +96,8 @@ function initScene(text){
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-	ctx.font = "bold "+Math.floor((ww/10)*(text.length >14 && fontSizeFactor === null ?14/text.length:fontSizeFactor))+"px " + font;
+	ctx.font = "bold "+Math.floor((ww/10)*(text.length >14 || fontSizeFactor === null ?14/text.length:fontSizeFactor))+"px " + font;
+	console.log(ctx.font);
 	ctx.textAlign = "center";
 	ctx.fillText(text, ww/2, wh/2);
 
