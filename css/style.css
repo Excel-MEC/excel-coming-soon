@@ -9,7 +9,8 @@ html,body,div,section{
 body{
   overflow: hidden;
   font-family: 'Bree Serif', serif;
-  background: #faebd7;
+  /*background: #faebd7;*/
+  background: #fdfdfd;
 }
 
 #e2016, #e2015, #e2014, .label, .facebook, .gplus, .insta{
@@ -57,6 +58,7 @@ ul.legacy{
   position: fixed;
   bottom: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   height: unset;
   width: 100%;
@@ -80,6 +82,7 @@ ul.legacy{
 .parts{
   margin: auto;
   text-align: center;
+  width: 100%;
 }
 
 .copyrt{
@@ -89,6 +92,16 @@ ul.legacy{
   left: 50%;
   color: rgba(206,164,108,0.9);
   transform: translateX(-50%);
+  font-family: 'Josefin Slab', serif;
+}
+
+.copyrt span{
+  /*display: inline-block;*/
+  font-size: 25px;
+  /*line-height: 1;*/
+  position: relative;
+  top: 6px;
+  font-weight: 400;
 }
 
 .label{
@@ -101,6 +114,21 @@ ul.legacy{
   transform: translateX(-50%);
   position: relative;
   left: 50%;
+}
+
+.footer ul.social a{
+  border: none;
+  background: none;
+  padding: 2px;
+  padding-bottom: 30px;
+}
+
+.footer ul.social i{
+  font-size: 1.5em;
+}
+
+.footer ul.social {
+  margin-bottom: 1px;
 }
 
 ul.legacy li{
@@ -126,24 +154,29 @@ ul.legacy li img{
   margin: 0;
 }
 
-a.facebook i{
+a i{
+  color: #999;
+  transition: color 0.6s;
+}
+
+a.facebook i:hover{
 	color: #3b5998;
 }
-a.twitter i{
+a.twitter i:hover{
 	color: #00aced;
 }
-a.gplus i{
+a.gplus i:hover{
 	color: #d34836;
 }
-a.insta i{
+a.insta i:hover{
 	color: #fb3958;
 }
 
 
-@media (max-width:768px) and (min-width: 413px) {
+@media (max-width:768px) {
   .mec-logo,
   .excel-logo{
-    height: 130px;
+    height: 50px;
     top: 40px;
   }
   .mec-text{
@@ -154,6 +187,19 @@ a.insta i{
 
   .mec-text p{
     font-size: 24px;
+  }
+
+  a.facebook i{
+  	color: #3b5998;
+  }
+  a.twitter i{
+  	color: #00aced;
+  }
+  a.gplus i{
+  	color: #d34836;
+  }
+  a.insta i{
+  	color: #fb3958;
   }
 
 }

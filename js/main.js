@@ -68,15 +68,17 @@ Rx.Observable.fromEvent(window,'mousewheel')
 
 window.sr = ScrollReveal();
 
-sr.reveal('#e2016',{ duration: 2000,origin: "bottom",distance: "30px"});
-sr.reveal('#e2015',{ duration: 2000,origin: "bottom",distance: "30px"});
-sr.reveal('#e2014',{ duration: 2000,origin: "bottom",distance: "30px"});
+(() => {
+  sr.reveal('#e2016',{ duration: 2000,origin: "bottom",distance: "200px"});
+  sr.reveal('#e2015',{ duration: 2000,delay:200,origin: "bottom",distance: "200px"});
+  sr.reveal('#e2014',{ duration: 2000,delay:400,origin: "bottom",distance: "200px"});
 
-sr.reveal('.label',{'duration':2000,'opacity':0})
+  // sr.reveal('.label',{'duration':2000,'opacity':0})
 
-sr.reveal('.facebook',{ duration: 2000,origin: "bottom",distance: "30px"});
-sr.reveal('.gplus',{ duration: 2000,origin: "bottom",distance: "30px"});
-sr.reveal('.insta',{ duration: 2000,origin: "bottom",distance: "30px"});
+  sr.reveal('.facebook',{ duration: 2000,delay:400,origin: "bottom",distance: "100px"});
+  sr.reveal('.gplus',{ duration: 2000,delay:200,origin: "bottom",distance: "100px"});
+  sr.reveal('.insta',{ duration: 2000,origin: "bottom",distance: "100px"});
 
-sr.reveal('.mec-logo',{ duration: 2000, origin:"left"});
-sr.reveal('.excel-logo',{ duration: 2000, origin: "right"});
+  sr.reveal('.mec-logo',{ duration: 2000, origin:"left",distance:"100px"});
+  sr.reveal('.excel-logo',{ duration: 2000, origin: "right",distance:"100px"});
+})()
