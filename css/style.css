@@ -177,7 +177,15 @@ a.insta i:hover{
   .mec-logo,
   .excel-logo{
     height: 50px;
-    top: 40px;
+    top: 10px;
+  }
+
+  .mec-logo{
+    left:5px;
+  }
+
+  .excel-logo{
+    right: 5px;
   }
   .mec-text{
     margin: 4px;

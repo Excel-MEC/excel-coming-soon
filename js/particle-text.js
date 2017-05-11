@@ -7,6 +7,8 @@ var canvas = document.querySelector("#scene"),
 	mouse = {x:0,y:0},
 	radius = 0.7;
 
+var densityFactor = 150;
+
 var lasttext = ""; // for resize()
 // var copy = document.querySelector("#copy");
 
@@ -97,8 +99,8 @@ function initScene(text){
 	ctx.globalCompositeOperation = "screen";
 
 	particles = [];
-	for(var i=0;i<ww;i+=Math.round(ww/150)){
-		for(var j=0;j<wh;j+=Math.round(ww/150)){
+	for(var i=0;i<ww;i+=Math.round(ww/densityFactor)){
+		for(var j=0;j<wh;j+=Math.round(ww/densityFactor)){
 			if(data[ ((i + j*ww)*4) + 3] > 150){
 				particles.push(new Particle(i,j));
 			}

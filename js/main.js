@@ -5,6 +5,10 @@ var text = [
   "Coming Soon.."
 ];
 
+// density
+
+var densityFactor = window.innerWidth > 768? 150: 95;
+
 
 var scrollDelay = 2000; // delay for accepting the next scroll event
 var autoScrollDelay = 3000;
