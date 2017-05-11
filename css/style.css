@@ -238,4 +238,11 @@ ul.legacy li:hover .tooltip{
   .footer ul.legacy li img{
     height: 30px;
   }
+
+  ul.legacy li .tooltip{
+    visibility: visible;
+    color: #111;
+    margin-left: -6px;
+    font-size: 10px;
+  }
 }
