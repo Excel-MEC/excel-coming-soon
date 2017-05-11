@@ -1,5 +1,5 @@
 var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
-var font = "sans serif";
+var font = "tahoma";
 var canvas = document.querySelector("#scene"),
 	ctx = canvas.getContext("2d"),
 	particles = [],

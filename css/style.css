@@ -12,12 +12,17 @@ body{
   background: #faebd7;
 }
 
+#e2016, #e2015, #e2014, .label, .facebook, .gplus, .insta{
+  /*opacity: 0;*/
+}
+
 
 .excel-logo,
 .mec-logo,
 .mec-text{
   position: fixed;
   top:20px;
+  /*opacity: 0;*/
 }
 
 .excel-logo{
