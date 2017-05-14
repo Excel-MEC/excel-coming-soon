@@ -70,7 +70,6 @@ Particle.prototype.render = function() {
 		this.vx += this.accX;
 		this.vy += this.accY;
 	}
-
 }
 
 function onMouseMove(e){
@@ -79,6 +78,7 @@ function onMouseMove(e){
 }
 
 function onTouchMove(e){
+	console.log("moved");
 	if(e.touches.length > 0 ){
 		mouse.x = e.touches[0].clientX;
 		mouse.y = e.touches[0].clientY;
@@ -86,8 +86,17 @@ function onTouchMove(e){
 }
 
 function onTouchEnd(e){
+	console.log("ended");
 	mouse.x = -9999;
 	mouse.y = -9999;
+}
+
+function onMouseUp(e){
+	console.log("mu");
+	setTimeout(()=>{
+		mouse.x = -9999;
+		mouse.y = -9999;
+	},500);
 }
 
 function initScene(text){
@@ -129,12 +138,13 @@ function initScene(text){
 	}
 	amount = particles.length;
 
-	
+
 	console.log("no.of parts: " + amount)
 }
 
 function onMouseClick(){
 	//radius++;
+	console.log("click");
 	if(radius ===5){
 		radius = 0;
 	}
@@ -154,5 +164,6 @@ function render(a) {
 window.addEventListener("resize", () => initScene(lasttext));
 window.addEventListener("mousemove", onMouseMove);
 window.addEventListener("touchmove", onTouchMove);
-window.addEventListener("click", onMouseClick);
+window.addEventListener("mouseup", onMouseUp);
+// window.addEventListener("click", onMouseClick);
 window.addEventListener("touchend", onTouchEnd);
