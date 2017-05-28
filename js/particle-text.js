@@ -1,11 +1,14 @@
-var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
-var font = "tahoma";
+import { colors, font, Radius } from  './config';
+
+
+// var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
+// var font = "tahoma";
 var canvas = document.querySelector("#scene"),
 ctx = canvas.getContext("2d"),
 particles = [],
 amount = 0,
 mouse = {x:0,y:0},
-radius = 0.7;
+radius = Radius;
 
 var lastPosX = [];
 var lastPosY = [];
@@ -160,10 +163,35 @@ function render(a) {
 	}
 };
 
-// copy.addEventListener("keyup", initScene);
-window.addEventListener("resize", () => initScene(lasttext));
-window.addEventListener("mousemove", onMouseMove);
-window.addEventListener("touchmove", onTouchMove);
-window.addEventListener("mouseup", onMouseUp);
-// window.addEventListener("click", onMouseClick);
-window.addEventListener("touchend", onTouchEnd);
+// // copy.addEventListener("keyup", initScene);
+// window.addEventListener("resize", () => initScene(lasttext));
+// window.addEventListener("mousemove", onMouseMove);
+// window.addEventListener("touchmove", onTouchMove);
+// window.addEventListener("mouseup", onMouseUp);
+// // window.addEventListener("click", onMouseClick);
+// window.addEventListener("touchend", onTouchEnd);
+
+
+export { 
+	initScene,
+	render,
+	particles,
+	ctx,
+	canvas, 
+	amount,
+	mouse,
+	lastPosX,
+	lastPosY,
+	lasttext,
+	ww, 
+	wh,
+	densityFactor,
+	radiusFactor,
+	fontSizeFactor,
+	Particle,
+	onMouseClick,
+	onMouseMove,
+	onTouchMove,
+	onMouseUp,
+	onTouchEnd
+	 };

@@ -1,29 +1,42 @@
-// Data
-var text = [
-  "Excel 2017",
-  "#RedefiningLines",
-  "Coming Soon.."
-];
+import { text, scrollDelay, autoScrollDelay, scrollRevealConfig } from './config';
+import {initScene,
+  render,
+  particles,
+  ctx,
+  canvas, 
+  amount,
+  mouse,
+  lastPosX,
+  lastPosY,
+  lasttext,
+  ww, 
+  wh,
+  densityFactor,
+  radiusFactor,
+  fontSizeFactor,
+  Particle,
+  onMouseClick,
+  onMouseMove,
+  onTouchMove,
+  onMouseUp,
+  onTouchEnd} from './particle-text';
+import ScrollReveal from 'scrollreveal';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/observable/fromEvent';
 
-// density
 
+import '../css/style.css';
 
-//
-
-
-var scrollDelay = 3000; // delay for accepting the next scroll event
-var autoScrollDelay = 4000;
-// uncomment to override the defaults
-
- var colors = ["#913cca","#bb3d7b", "#d63f4a","#da3f43", "#cc3e5c"];
-// var font = "Roboto"
-
-// particle-text init
 
 
 
 
 // change on scroll
+
+
+window.sr = ScrollReveal();
 
 
 var lock = true;
@@ -61,11 +74,19 @@ setTimeout(() => { // prevent the user from scrolling too soon
 
 // scroll reveal
 
-window.sr = ScrollReveal();
+// window.sr = ScrollReveal();
 
-(() => {
+window.onload = () => {
 
-  Rx.Observable.fromEvent(window,'mousewheel')
+  // copy.addEventListener("keyup", initScene);
+  window.addEventListener("resize", () => initScene(lasttext));
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("touchmove", onTouchMove);
+  window.addEventListener("mouseup", onMouseUp);
+  // window.addEventListener("click", onMouseClick);
+  window.addEventListener("touchend", onTouchEnd);
+
+  Observable.fromEvent(window,'mousewheel')
     .map( e => e.wheelDelta > 0)
     .filter( () => lock === false )
     .subscribe( (delta) => {
@@ -81,17 +102,6 @@ window.sr = ScrollReveal();
       },scrollDelay);
     });
 
-  sr.reveal('#e2017',{ duration: 2000,origin: "bottom",distance: "200px"});
-  sr.reveal('#e2016',{ duration: 2000,delay:200,origin: "bottom",distance: "200px"});
-  sr.reveal('#e2015',{ duration: 2000,delay:400,origin: "bottom",distance: "200px"});
-  sr.reveal('#e2014',{ duration: 2000,delay:800,origin: "bottom",distance: "200px"});
 
-  // sr.reveal('.copyrt',{duration:2000,origin: "bottom"});
-
-  sr.reveal('.facebook',{ duration: 2000,delay:400,origin: "bottom",distance: "100px"});
-  sr.reveal('.gplus',{ duration: 2000,delay:200,origin: "bottom",distance: "100px"});
-  sr.reveal('.insta',{ duration: 2000,origin: "bottom",distance: "100px"});
-
-  sr.reveal('.mec-logo',{ duration: 2000, origin:"left",distance:"100px"});
-  sr.reveal('.excel-logo',{ duration: 2000, origin: "right",distance:"100px"});
-})()
+    scrollRevealConfig();
+}
