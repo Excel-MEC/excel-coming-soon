@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+const ExtractSass = new ExtractTextPlugin({
+	filename: "[name].[hash].css"
+});
+
 
 module.exports = {
 
@@ -33,6 +37,16 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: ExtractTextPlugin.extract({fallback :'style-loader',use: 'css-loader'})
+			},
+			{
+				test: /\.scss$/,
+				use: ExtractSass.extract({
+					use: [
+						{ loader: 'css-loader' },
+						{ loader: 'sass-loader' }
+					],
+					fallback: "style-loader"
+				})
 			}
 		]
 	},
@@ -45,7 +59,8 @@ module.exports = {
 	      cssProcessor: require('cssnano'),
 	      cssProcessorOptions: { discardComments: {removeAll: true } },
 	      canPrint: true
-	    })
+		}),
+		ExtractSass
 	]
 
 };
