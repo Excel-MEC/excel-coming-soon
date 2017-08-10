@@ -28,6 +28,7 @@ import 'rxjs/add/observable/fromEvent';
 
 
 import '../css/style.css';
+import '../scss/main.scss';
 
 
 
